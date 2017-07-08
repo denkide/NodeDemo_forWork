@@ -1,0 +1,59 @@
+extends layout
+
+block content
+  .row
+    p(style='font-size: 30px;') Willamette Pass Ski Patrol: Roster
+    <br />
+  .row
+  div
+    span #[a(href="http://localhost:3000/patrol/Patrol1") Patrol 1]  | #[a(href="http://localhost:3000/patrol/Patrol2") Patrol 2]  |  #[a(href="http://localhost:3000/patrol/Patrol3") Patrol 3]  }  #[a(href="http://localhost:3000/patrol/Patrol4") Patrol 4]  
+    <br />
+    <br />
+    p Patrol: 
+      select(id="ddlPatrolAssignments", name="patrolAssignments", 
+      onchange="alert('To Do')")
+        option(value='', selected='')
+        -for item in patrolassignments
+           option(#{item.PatrolAssignment}) #{item.PatrolAssignment}
+  .row
+  div.content
+     -if (typeof(patrol) !== 'undefined'){
+        +rosterpanel(title, "primary",patrol)
+        </br>
+     -}
+     -if (typeof(patrol1) !== 'undefined'){
+        +rosterpanel("Patrol 1", "primary",patrol1)
+        </br>
+     -}
+     -if (typeof(patrol2) !== 'undefined'){
+        +rosterpanel("Patrol 2", "primary",patrol2)
+        </br>
+     -}
+     -if (typeof(patrol3) !== 'undefined'){
+        +rosterpanel("Patrol 3", "primary",patrol3)
+        </br>
+     -}
+     -if (typeof(patrol4) !== 'undefined'){
+        +rosterpanel("Patrol 4", "primary",patrol4)
+        </br>
+     -}
+     -if (typeof(patrolFlex) !== 'undefined'){
+        +rosterpanel("Flex", "primary",patrolFlex)
+        </br>
+     -}
+     -if (typeof(patrolAdmin) !== 'undefined'){
+        +rosterpanel("Admin", "primary",patrolAdmin)
+        </br>
+     -}
+     -if (typeof(patrolAlumni) !== 'undefined'){
+        +rosterpanel("Alumni", "primary",patrolAlumni)
+        </br>
+     -}
+     -if (typeof(patrolManagement) !== 'undefined'){
+        +rosterpanel("Managenent", "primary",patrolManagement)
+        </br>
+     -}
+     -if (typeof(patrolVet) !== 'undefined'){
+        +rosterpanel("Veterans", "primary",patrolVet)
+        </br>
+     -}

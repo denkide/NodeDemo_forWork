@@ -1,0 +1,31 @@
+include mixins
+doctype
+html( lang="en" )
+    head
+        title Willamette Pass Ski Patrol
+        meta( charset='utf-8' )
+        meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+        meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+        meta( name='description', content='Willamette Pass Ski Patrol' )
+        
+        //- Bootswatch Theme
+        link(href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/flatly/bootstrap.min.css", rel="stylesheet")
+
+    body(style="padding-bottom:10rem;")
+        +nav("Willamette Pass Ski Patrol", "dropdown_menu")
+          +nav_item( "http://localhost:3000/", "active" ) Home
+          +nav_item( "http://localhost:3000/patrol" ) Patrol
+          +nav_item( "http://localhost:3000/contact" ) Contact
+          +nav_item( "http://localhost:3000/login" ) Login
+          +nav_item_dropdown( "#" )( label="Roster" )
+            +nav_item( "http://localhost:3000/roster/showAll" ) showAll
+            +nav_item( "http://localhost:3000/roster/getPatrolAssignments" ) getPatrolAssignments
+            +nav_item( "http://localhost:3000/roster/Patrol1" ) getPatrol
+            +nav_divider
+            +nav_header Nav header
+            +nav_item( "#" ) Separated link
+            +nav_item( "#" ) One more separated link
+        .container
+          block content
+        script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
+        script( src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' )

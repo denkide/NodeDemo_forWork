@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .row
+    p(style='font-size: 30px;') #{title}
+    <br />
+  .row
+    .col-md-4.col-sm-6.col-xs-12
+      +panel("Panel Heading") p #[a(href="http://localhost:3000/patrol/") patrol page] 
+    .col-md-4.col-sm-6.col-xs-12
+      +panel("Panel Heading", "primary")
+    .col-md-4.col-sm-6.col-xs-12
+      +panel("Panel Heading", "success")
+     
