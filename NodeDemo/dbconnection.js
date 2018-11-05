@@ -1,7 +1,7 @@
 var mysql=require('mysql');
 var connection=mysql.createPool({
     host:'localhost',
-    user:'root',
+    user:'xxxxx',
     password:'xxxxx',
     database:'thunderbox_WPSP',
     multipleStatements: true
